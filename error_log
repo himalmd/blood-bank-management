@@ -1,0 +1,2 @@
+[04-Oct-2020 08:54:04 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/himajimn/public_html/bloodbank/reg_login.php on line 59
+[04-Oct-2020 08:56:00 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/himajimn/public_html/bloodbank/reg_login.php on line 59

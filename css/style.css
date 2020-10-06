@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+
+*{margin: 0; padding: 0;
+	box-sizing: border-box;
+    list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+p{
+	font-family: Quicksand, sans-serif;
+	font-size: 15px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+h1{
+	font-size: 36px;
+	font-family: Roboto, sans-serif;
+	font-weight: 700;
+	color: #333333;
+}
+
+h2{
+	font-size: 22px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    color: #333333;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.container{
+	width: 90%;
+	margin: auto;
+}
+
+.bg-img{
+	background-image: url('../images/blood.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+.clearfix{
+	overflow: auto;
+}
+.wrapper{  
+	margin: 60px auto;
+	width: 1300px;
+	height: auto;
+}
+.top-bar{
+	height: 100px;
+	width: auto;
+	background: rgb(255,255,255,0.6);
+}
+.top-bar-links{
+	width: 80%;
+	float: right;
+	text-align: right;
+	padding: 30px;
+}
+.top-bar-links ul{
+	list-style: none;
+	font-size: 17px;
+}
+.top-bar-links ul li{
+	display: inline-block;
+	padding: 0 10px;
+	border-right: 1px solid white;
+}
+.top-bar-links ul li a{
+	color: #333333;
+	font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+}
+.top-bar-links ul li a:hover{
+	color: white;
+	background-color: maroon;
+}
+.top-bar-links ul li:last-child{
+	border: none;
+}
+.logo{
+	background-image: url("../images/logo.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 20%;
+	float: left;
+	height: 100px;
+	padding: 5px;
+}
+.introtext{
+	width: 40%;
+	float: right;
+	margin: 10px;
+	margin-right: 40px;
+
+}
+.introtext h1{
+	margin-top: 100px;
+	font-size: 72px;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+.introtext p{
+	font-size: 18px;
+	text-align: justify;
+}
+
+button{
+	background: #fff;
+	border-color: #C2C2C2;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-family: inherit;
+}
+button:hover{
+	background-color: #eee;
+	color: white;
+}
+
+.regbtn {
+	width: 200px;
+}
+
+.wrapper .login{
+	width: 50%;
+	height: 400px;
+	float: left;
+	background-color: #f3f3f3;
+	padding: 20px;
+	border-radius: 5px;
+}
+.wrapper .register{
+	width: 49.5%;
+    height: 400px;
+    float: right;
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 5px;
+}
+.donor,.requester,.hospital,.organization{
+	padding: 20px;
+}
+
+.donor button:hover{
+	background-color: #4CAF50;
+    color: white;
+}
+.requester button:hover{
+	background-color: #008CBA;
+    color: white;
+}
+.hospital button:hover{
+	background-color: #f44336;
+    color: white;
+}
+.organization button:hover{
+	background-color: orange;
+    color: white;
+}
+
+.blur {
+background-size:cover;
+-webkit-filter: blur(4px);
+-moz-filter: blur(4px);
+-ms-filter: blur(4px);
+-o-filter: blur(4px);
+filter: blur(4px);
+}
+
+/*forms*/
+.reg_form{
+	margin: auto;
+	text-align: center;
+	width: 500px;
+}
+.form-style-2{
+	max-width: 500px;
+	padding: 20px;
+	font: 13px Arial, Helvetica, sans-serif;
+}
+.form-style-2-heading{
+	font-weight: 600;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 18px;
+    padding-bottom: 10px;
+    font-family: Roboto, sans-serif;
+    color: #333333;
+}
+.form-style-2 label{
+	display: block;
+	margin: 0px 0px 15px 0px;
+}
+.form-style-2 label > span{
+	width: 100px;
+    font-weight: 400;
+    float: left;
+    padding-top: 8px;
+    padding-right: 5px;
+    font-family: Roboto, sans-serif;
+    color: #333;
+}
+.form-style-2 span.required{
+	color:red;
+}
+.form-style-2 .tel-number-field{
+	width: 200px;
+	text-align: center;
+}
+.form-style-2 input.input-field, .form-style-2 .select-field{
+	width: 48%;	
+}
+.form-style-2 input.input-field, 
+.form-style-2 .tel-number-field, 
+.form-style-2 .textarea-field{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border: 1px solid #C2C2C2;
+	box-shadow: 1px 1px 4px #EBEBEB;
+	-moz-box-shadow: 1px 1px 4px #EBEBEB;
+	-webkit-box-shadow: 1px 1px 4px #EBEBEB;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 7px;
+	outline: none;
+}
+.form-style-2 .input-field:focus, 
+.form-style-2 .tel-number-field:focus, 
+.form-style-2 .textarea-field:focus,  
+.form-style-2 .select-field:focus{
+	border: 1px solid #0C0;
+}
+.form-style-2 .textarea-field{
+	height:100px;
+	width: 55%;
+}
+.form-style-2 input[type=submit],
+.form-style-2 input[type=button]{
+	border: none;
+	padding: 8px 15px 8px 15px;
+	background: #FF8500;
+	color: #fff;
+	box-shadow: 1px 1px 4px #DADADA;
+	-moz-box-shadow: 1px 1px 4px #DADADA;
+	-webkit-box-shadow: 1px 1px 4px #DADADA;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+.form-style-2 input[type=submit]:hover,
+.form-style-2 input[type=button]:hover{
+	background: #EA7B00;
+	color: #fff;
+}
+
+/*Login Form*/
+.wrapper .login .tabslink ul li {
+	display: inline;
+	padding: 20px 20px;
+	background: #eee;
+	font-weight: bold;
+	box-shadow: 2px 0 2px #aaa;
+	margin-right: 5px;
+}
+.wrapper .login .tabslink ul li.active{
+	color: white;
+	background: maroon;
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+.wrapper .login .tabcontent{
+	margin: 20px 10px 10px 10px;
+	padding: 10px;
+}
+
+/*Dashboard and main content*/
+.container-row {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-gap: 30px;
+    /*background-color: aquamarine;*/
+    padding: 30px;
+    height: auto;
+}
+
+.container-row>div {
+    padding: 20px 0;
+    font-size: 30px;
+    height: 500px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.4);
+}
+
+.hospital>div{
+	background-color: rgb(150,240,228);
+}
+.donor>div{
+	background-color: rgb(241,190,190);
+}
+.organization>div{
+	background-color: rgb(243,239,201);
+}
+.admin>div{
+	background-color: rgb(240, 230, 200);
+}
+
+/* Organization option*/
+
+.topic .opt_1{
+	margin-top: 100px;
+	float: left;
+	}
+.topic .opt_2{
+	margin-top: 100px;
+	float: right;
+}
+.topic .opt_1 button{
+	font-weight: bold;
+	width: 200px;
+	height: 150px;
+}
+.topic .opt_2 button{
+	font-weight: bold;
+	width: 200px;
+	height: 150px;
+}
+/* Organization option*/
+
+/*Dashboard and main content*/
+.contain {
+    font-size: 20px;
+    margin-left: 50px;
+    line-height: 40px;
+    text-align: left;
+}
+
+.contain a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.contain a.active {
+    color: rgb(206, 14, 14);
+    font-weight: bold;
+}
+
+.topic {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-left: 300px;
+	width: 500px;
+}
+.content{
+	
+	font-size: 20px;
+	line-height: 40px;
+	text-decoration-color: black;
+}
+.content a:hover{
+	color: #fff;
+}
+
+/*Dashboard and main content*/
+
+/*search*/
+.type_check{
+	font-size: 20px;
+	text-align: center;
+	margin-top: 70px;
+	font-weight: bold;
+}
+.filter {
+	margin-top: -100px;
+	font-size: 20px;
+	float: right;
+	margin-right: 50px;
+	font-weight: bold;
+}
+input[type=submit]{
+	width: 100px;
+	height: 50px;
+	background-color: #81e085;
+}
+/*search*/
+
+
+/*donor*/
+.descriptor{
+	text-align: center;
+	height: 400px;
+	width: 800px;
+	margin-left: 20px;
+	float: left;
+}
+.capable{
+	background-color: white;
+	text-align: center;
+	width: 200px;
+	height: 200px;
+	float: right;
+	margin-top: 100px;
+	margin-right: 20px;
+}
+.capable button{
+	width: 200px;
+	height: 200px;
+}
+
+.question{
+	text-align: center;
+	margin-left: 400px;
+	width: 700px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	background-color: pink;
+}
+.question p{
+	font-size: 20px;
+}
+
+.descriptor .fd_1{
+	width: 300px;
+	height: 100px;
+	float: left;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+.descriptor .fd_2{
+	width: 300px;
+	height: 100px;
+	float: right;
+	margin-top: 30px;
+	margin-right: 30px;
+}
+.descriptor .fd_3{
+	width: 300px;
+	height: 100px;
+	margin-top: 150px;
+	margin-left: 30px;
+	float: left;
+}
+.descriptor .fd_4{
+	width: 300px;
+	height: 100px;
+	float: right;
+	margin-top: 150px;
+	margin-right: 30px;
+}
+
+.fd_1 button, .fd_2 button, .fd_3 button, .fd_4 button{
+	width: 300px;
+	height: 100px;
+}
+/*donor*/
+
+
+/*footer*/
+
+.page-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(43, 41, 41);
+    color: white;
+    width: 100%;
+    height: 50px;
+    margin-top: auto;
+    font-size: 12px;
+}
+
+.page-footer .footer-bottom {
+    background-color: rgb(104, 101, 101);
+    height: 15px;
+    position: absolute;
+    color: black;
+    bottom: 0px;
+    left: 0px;
+    padding-top: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-content {
+    height: 30px;
+    display: flex;
+    padding: 10px;
+}
+
+.page-footer .footer-content .footer-section {
+    height: 15px;
+    flex: 1;
+    text-align: center;
+}
