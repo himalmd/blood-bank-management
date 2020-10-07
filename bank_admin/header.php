@@ -4,7 +4,7 @@
 
 <head>
 
-	<link rel="stylesheet" type="text/css" href="../css/madusanka.css">
+	
 
 
 
@@ -32,7 +32,8 @@
 
 					<li><a href="#">Campaigns</a></li>
 
-					<li><a href="https://himal.dev/bloodbank/reg_login.php">Login/Registration</a></li>
+
+					<li><a href="#">Log Out</a></li>
 
 				</ul>
 

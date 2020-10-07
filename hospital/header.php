@@ -34,6 +34,8 @@
 
 					<li><a href="http://localhost/bloodbank/reg_login.php">Login/Registration</a></li>
 
+					<li><a href="#">Log Out</a></li>
+
 				</ul>
 
 			</div>	<!--top-bar-links-->

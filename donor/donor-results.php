@@ -33,22 +33,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     if(empty($bgroup_err) && empty($location_err)){
-        $sql = "SELECT first_name, last_name, addressline1, addressline2, bloodgroup FROM donor WHERE bloodgroup = '$bgroup'";
+        $sql = "SELECT first_name, last_name, addressline1, addressline2, bloodgroup, telephone FROM donor WHERE bloodgroup = '$bgroup'";
 
         $result = mysqli_query($link, $sql);
         
-        if (mysqli_num_rows($result) > 0) {
-          // output data of each row
-          while($row = mysqli_fetch_assoc($result)) {
-          
-            $firstname = $row["first_name"];
-            $lastname = $row["last_name"];
-            $address = $row["addressline1"]." ".$row["addressline2"];
         
-          }
-        } else {
-          echo "0 results";
-        }
         
     }
     
@@ -93,7 +82,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div style="text-align: center; font-weight: bold; margin-top: 30px;">Dashboard</div><br>
 
             <div class="contain">
-                <li><a href="donor_home.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
 
             	<li><a href="donor_profile.php" >Profile</a></li>
 
@@ -110,18 +99,54 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
         <div class="main">
+            <div class="topic">Search Results</div>
 
-        <div class="topic">Search Results</div>
-
+            <div class="limiter">
+		        <div class="container-table100">
+			        <div class="wrap-table100">
+        				<div class="table100 ver2 m-b-110">
+        					<div class="table100-head">
+        						<table>
+        							<thead>
+        								<tr class="row100 head">
+        									<th class="cell100 column1">Name</th>
+        									<th class="cell100 column2">Address</th>
+        									<th class="cell100 column3">Telephone</th>
+        								</tr>
+        							</thead>
+        						</table>
+        					</div>
         
-<?php 
-
-echo $firstname. " " .$lastname ; 
-echo $address;
-
-?>
-
-    </div>
+        					<div class="table100-body js-pscroll">
+        						<table>
+        							<tbody>
+        							    <?php 
+                                            if (mysqli_num_rows($result) > 0) {
+                                                  // output data of each row
+                                                while($row = mysqli_fetch_assoc($result)) {
+                                                    $firstname = $row["first_name"];
+                                                    $lastname = $row["last_name"];
+                                                    $address = $row["addressline1"]." ".$row["addressline2"];
+                                                    $telephone = $row["telephone"];
+                                                    
+                                                    echo "<tr class='row100 body'><td class='cell100 column1'>".$firstname." ".$lastname."</td>";
+                                                    echo "<td class='cell100 column2'>".$address."</td>";
+                                                    echo "<td class='cell100 column3'>".$telephone."</td></tr>";
+                                                    
+                                                }
+                                            } else {
+                                                  echo "0 results";
+                                            }
+                                        ?>
+        							</tbody>
+        						</table>
+        					</div>
+        				</div>
+			</div>
+		</div>
+	        </div>
+            
+        </div>
 
 
 

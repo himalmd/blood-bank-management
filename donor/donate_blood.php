@@ -59,6 +59,15 @@
         <div class="main">
 
             <div class="topic">Donate Blood</div>
+            
+
+            <div class="form-style-2 donor_calander">
+                <label>Date :<input type="date" class="input-field" name="date" value="" /></label>
+            </div>
+
+            <div class="donor_time">
+                <label>Time :<input type="time" class="input-field" name="time"></label>
+            </div>
 
         </div>
 

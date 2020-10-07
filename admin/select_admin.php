@@ -2,17 +2,9 @@
 <html>
 <head>
 	<title>System Admin</title>
-	<link rel="stylesheet" type="text/css" href="../css/madusanka.css">
-	<script type="text/javascript" src="../js/madusanka.js"></script>
-	<style>
-        body {
-  			background-image: url('../img/blood.jpg');
-  			background-repeat: no-repeat;
-  			background-attachment: fixed;  
-  			background-size: cover;
-			 }
-    
-    </style>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script type="text/javascript" src="../js/script.js"></script>
+	
 </head>
 
 <body>
@@ -26,9 +18,10 @@
             <form method="post">
             <div class="contain">
                 <li><a href="admin_home.php">Home</a></li>
-            	<li><a href="admin_home.php" >Manage Admin</a></li>
-                <li><a href="#" class="active">Manage Hospitals</a></li>
+            	<li><a href="manage_admin.php" class="active">Manage Admin</a></li>
+                <li><a href="manage_hospitals.php" >Manage Hospitals</a></li>
                 <li><a href="view_report.php">View Report</a></li>
+                <li><a href="admin_profile.php">Profile</a></li>
                 
             </div>
             </form>

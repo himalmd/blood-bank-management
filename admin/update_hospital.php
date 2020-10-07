@@ -21,7 +21,7 @@
             	<li><a href="admin_home.php" >Manage Admin</a></li>
                 <li><a href="#" class="active">Manage Hospitals</a></li>
                 <li><a href="view_report.php">View Report</a></li>
-                
+                <li><a href="admin_profile.php">Profile</a></li>
             </div>
             </form>
 

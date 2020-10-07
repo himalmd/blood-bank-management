@@ -17,11 +17,12 @@
             <div style="text-align: center; font-weight: bold; margin-top: 30px;">Dashboard</div><br>
             <form method="post">
             <div class="contain">
-                <li><a href="admin_home.php">Home</a></li>
+                <li><a href="admin_home.php" >Home</a></li>
             	<li><a href="manage_admin.php" >Manage Admin</a></li>
-                <li><a href="#" class="active">Manage Hospitals</a></li>
-                <li><a href="view_report.php">View Report</a></li>
+                <li><a href="manage_hospitals.php">Manage Hospitals</a></li>
+                <li><a href="#" class="active">View Report</a></li>
                 <li><a href="admin_profile.php">Profile</a></li>
+                
                 
             </div>
             </form>
@@ -30,14 +31,16 @@
 
         <div class="main">
             <div class="topic">
-            <div style="text-align: center; font-weight:bold; margin-top: 30px;">Manage Hospitals</div><br>
+            <div style="text-align: center; font-weight:bold; margin-top: 30px;">View Report</div><br>
                 <form action="" method="post">
                     <div class="content">
-                        <li><a href="new_hospital.php">Add New Hospitals</a></li>
-                        <li><a href="select_hospital.php">Update Hospital info</a></li>
+                         <li><a href="#" >Hospital Reports</a></li>
+                        <li><a href="#">Donor Reports</a></li>
+                        <li><a href="#">Blood Stock Reports</a></li>
 
                     </div>
                 </form>
+            </div>
             </div>
         </div>
     </div>

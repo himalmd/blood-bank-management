@@ -3,8 +3,8 @@
 require_once "../config.php";
  
 // Define variables and initialize with empty values
-$nic = $password = $confirm_password = $first_name = $last_name = $dob = $bgroup = $gender = $addline1 = $addline2 = $telephone = "";
-$nic_err = $password_err = $confirm_password_err = $first_name_err = $last_name_err = $dob_err = $bgroup_err = $gender_err = $addline1_err = $addline2_err = $telephone_err = "";
+$nic = $password = $confirm_password = $first_name = $last_name = $dob = $bgroup = $gender = $addline1 = $addline2 = $telephone = $district = "";
+$nic_err = $password_err = $confirm_password_err = $first_name_err = $last_name_err = $dob_err = $bgroup_err = $gender_err = $addline1_err = $addline2_err = $telephone_err = $district_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -96,6 +96,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $gender = trim($_POST["gender"]);
     }
 
+    // Validate District
+    if(empty(trim($_POST["district"]))){
+        $district_err = "Please enter your district";     
+    } else{
+        $district = trim($_POST["district"]);
+    }
+    
     // Validate Address
     if(empty(trim($_POST["addline1"]))){
         $addline1_err = "Please enter your address";     
@@ -117,11 +124,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($nic_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO donor (nic, password, first_name, last_name, dob, bloodgroup, gender, addressline1, addressline2, telephone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO donor (nic, password, first_name, last_name, dob, bloodgroup, gender, district, addressline1, addressline2, telephone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssssssssss", $param_username, $param_password, $first_name, $last_name, $dob, $bgroup, $gender, $addline1, $addline2, $telephone);
+            mysqli_stmt_bind_param($stmt, "sssssssssss", $param_username, $param_password, $first_name, $last_name, $dob, $bgroup, $gender, $district, $addline1, $addline2, $telephone);
             
             // Set parameters
             $param_username = $nic;
@@ -212,6 +219,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <option value="female">Female</option>
                 </select>
                 <span class="help-block"><?php echo $gender_err; ?></span>
+            </div>
+            <div class="form-group">
+                <label>District</label>
+                <input type="text" name="district" class="form-control" value="<?php echo $district; ?>">
+                <span class="help-block"><?php echo $district_err; ?></span>
             </div>
             <div class="form-group">
                 <label>Address Line 1</label>

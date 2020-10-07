@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Manage Donors</title>
+	<title>PROFILE</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<script type="text/javascript" src="../js/script.js"></script>
 </head>
 <body>
 	<?php
-		require('header.php');
+		require 'header.php';
 	?>
 	<div class="container-row admin">
         <div class="dashboard-side">
@@ -15,12 +15,12 @@
             <form method="post">
             <div class="contain">
             	<li><a href="admin_home.php">Home</a></li>
-            	<li><a href="manage_donors.php" class="active">Manage Donor</a></li>
+            	<li><a href="manage_donors.php" >Manage Donor</a></li>
             	<li><a href="manage_campaigns.php">Manage Campaign</a></li>
-            	<li><a href="manage_organizations.php">Manage Organization</a></li>
-            	<li><a href="manage_stock.php">Manage Blood Stock</a></li>
-                <li><a href="donor_registration.php">Donor Registration</a></li>
-                <li><a href="admin_profile.php">Profile</a></li>
+            	<li><a href="manage_organizations.php" >Manage Organization</a></li>
+            	<li><a href="manage_stock.php" >Manage Blood Stock</a></li>
+                <li><a href="donor_registration.php" >Donor Registration</a></li>
+                <li><a href="#" class="active">Profile</a></li>
                 
             </div>
             </form>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="main">
-            <div class="topic">Manage Donors</div>
+            <div class="topic">PROFILE</div>
         </div>
     </div>
 
