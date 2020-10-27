@@ -2,8 +2,8 @@
 <html>
 <head>
 <title>Blood Bank Management System</title>	
-<link rel="stylessheet" href="css/style.css">
-<script src="js/script.js"></script>
+<link rel="stylessheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
 		<div class="top-bar clearfix">

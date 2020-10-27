@@ -1,0 +1,1 @@
+[25-Oct-2020 06:59:03 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/himajimn/public_html/bloodbank/donor/search_donor/donor-results.php on line 72

@@ -1,0 +1,10 @@
+[25-Oct-2020 06:36:00 America/New_York] PHP Notice:  Undefined index: Telephone in /home/himajimn/public_html/bloodbank/requester/profile/index.php on line 22
+[25-Oct-2020 06:36:00 America/New_York] PHP Notice:  Undefined index: Telephone2 in /home/himajimn/public_html/bloodbank/requester/profile/index.php on line 23
+[25-Oct-2020 06:36:32 America/New_York] PHP Notice:  Undefined variable: nic in /home/himajimn/public_html/bloodbank/requester/profile/edit-requester.php on line 11
+[25-Oct-2020 06:36:32 America/New_York] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/himajimn/public_html/bloodbank/requester/profile/edit-requester.php on line 13
+[25-Oct-2020 06:36:32 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/himajimn/public_html/bloodbank/requester/profile/edit-requester.php on line 18
+[25-Oct-2020 06:36:32 America/New_York] PHP Notice:  Undefined offset: 0 in /home/himajimn/public_html/bloodbank/requester/profile/edit-requester.php on line 23
+[25-Oct-2020 06:37:08 America/New_York] PHP Notice:  Undefined variable: nic in /home/himajimn/public_html/bloodbank/requester/profile/edit-requester.php on line 11
+[25-Oct-2020 06:37:08 America/New_York] PHP Notice:  Undefined offset: 0 in /home/himajimn/public_html/bloodbank/requester/profile/edit-requester.php on line 23
+[25-Oct-2020 06:38:14 America/New_York] PHP Notice:  Undefined index: Telephone in /home/himajimn/public_html/bloodbank/requester/profile/index.php on line 22
+[25-Oct-2020 06:38:14 America/New_York] PHP Notice:  Undefined index: Telephone2 in /home/himajimn/public_html/bloodbank/requester/profile/index.php on line 23

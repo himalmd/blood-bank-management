@@ -4,8 +4,8 @@
 
 <head>
 
-	
-
+	<link rel="stylesheet" type="text/css" href="https://himal.dev/bloodbank/css/style.css">
+	<script type="text/javascript" src="https://himal.dev/bloodbank/js/script.js"></script>
 
 
 </head>
@@ -32,9 +32,7 @@
 
 					<li><a href="#">Campaigns</a></li>
 
-					<li><a href="https://himal.dev/bloodbank/reg_login.php">Login/Registration</a></li>
-
-					<li><a href="#">Log Out</a></li>
+					<li><a href="https://himal.dev/bloodbank/requester/logout.php">Log Out</a></li>
 
 				</ul>
 

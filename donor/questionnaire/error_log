@@ -1,0 +1,5 @@
+[25-Oct-2020 09:14:53 America/New_York] PHP Notice:  Undefined index: q1 in /home/himajimn/public_html/bloodbank/donor/questionnaire/result.php on line 8
+[25-Oct-2020 09:14:53 America/New_York] PHP Notice:  Undefined index: q2 in /home/himajimn/public_html/bloodbank/donor/questionnaire/result.php on line 9
+[25-Oct-2020 09:14:53 America/New_York] PHP Notice:  Undefined index: q3 in /home/himajimn/public_html/bloodbank/donor/questionnaire/result.php on line 10
+[25-Oct-2020 09:14:53 America/New_York] PHP Notice:  Undefined index: q4 in /home/himajimn/public_html/bloodbank/donor/questionnaire/result.php on line 11
+[25-Oct-2020 09:14:53 America/New_York] PHP Notice:  Undefined index: q5 in /home/himajimn/public_html/bloodbank/donor/questionnaire/result.php on line 12

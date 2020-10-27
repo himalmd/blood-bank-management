@@ -11,10 +11,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Validate username
     if(empty(trim($_POST["nic"]))){
-        $nic_err = "Please enter a username.";
-    } else{
+        $nic_err = "Please enter an NIC.";
+    
+    }elseif (strlen(trim($_POST["nic"])) > 12) {
+        $nic_err = "Your NIC is not Valid.";
+        
+    }else{
         // Prepare a select statement
-        $sql = "SELECT donorid FROM donor WHERE nic = ?";
+        $sql = "SELECT first_name FROM donor WHERE nic = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -23,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Set parameters
             $param_username = trim($_POST["nic"]);
             
-            // Attempt to execute the prepared statement
+            // Attempt to execute the prepared statement 
             if(mysqli_stmt_execute($stmt)){
                 /* store result */
                 mysqli_stmt_store_result($stmt);
@@ -31,7 +35,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(mysqli_stmt_num_rows($stmt) == 1){
                     $nic_err = "This username is already taken.";
                 } else{
-                    $nic = trim($_POST["nic"]);
+                    $temp = trim($_POST["nic"]);
+                    $nic =  strtoupper($temp);
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -97,10 +102,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // Validate District
-    if(empty(trim($_POST["district"]))){
+    if(empty(trim($_POST["location"]))){
         $district_err = "Please enter your district";     
     } else{
-        $district = trim($_POST["district"]);
+        $district = trim($_POST["location"]);
     }
     
     // Validate Address
@@ -114,21 +119,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $addline2 = trim($_POST["addline2"]);
     
     // Validate Telephone
-    if(empty(trim($_POST["telephone"]))){
-        $telephone_err = "Please enter your address";     
+    if(empty(trim($_POST["telephone-1"]))){
+        $telephone_err = "Please enter your Telephone number";     
     } else{
-        $telephone = trim($_POST["telephone"]);
+        $telephone = trim($_POST["telephone-1"]);
     }
+
+    $telephone2 = trim($_POST["telephone-2"]);
     
     // Check input errors before inserting in database
-    if(empty($nic_err) && empty($password_err) && empty($confirm_password_err)){
+    if(empty($nic_err) && empty($password_err) && empty($confirm_password_err) && empty($dob_err) && empty($gender_err) && empty($telephone_err) && empty($district_err) && empty($first_name_err) && empty($last_name_err) && empty($addline1_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO donor (nic, password, first_name, last_name, dob, bloodgroup, gender, district, addressline1, addressline2, telephone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO donor (nic, password, first_name, last_name, dob, bloodgroup, gender, district, addressline1, addressline2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssssssssss", $param_username, $param_password, $first_name, $last_name, $dob, $bgroup, $gender, $district, $addline1, $addline2, $telephone);
+            mysqli_stmt_bind_param($stmt, "ssssssssss", $param_username, $param_password, $first_name, $last_name, $dob, $bgroup, $gender, $district, $addline1, $addline2);
             
             // Set parameters
             $param_username = $nic;
@@ -136,8 +143,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
+                   $sql1= "INSERT INTO donor_telephone (NIC, TelephoneNo, Flag) VALUES ('$nic', '$telephone', '1')";
+                    if (mysqli_query($link, $sql1)){
+                        if (!empty($telephone2)) {
+                        $sql2= "INSERT INTO donor_telephone (NIC, TelephoneNo, Flag) VALUES ('$nic', '$telephone2', '0')";
+                            mysqli_query($link, $sql2);
+                        }
+                    }else{echo "Telephone1 errors";}
                 // Redirect to login page
-                header("location: login.php");
+                header("location: ../reg_login.php?reg=ok");
             } else{
                 echo "Something went wrong. Please try again later.";
             }
@@ -150,102 +164,132 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     mysqli_close($link);
 }
+
+ require('header.php');
+
 ?>
  
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
-</head>
+
 <body>
-    <div class="wrapper">
-        <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($nic_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
-                <input type="text" name="nic" class="form-control" value="<?php echo $nic; ?>">
-                <span class="help-block"><?php echo $nic_err; ?></span>
-            </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
-                <span class="help-block"><?php echo $password_err; ?></span>
+        <div class="container">
+            <div class="signup-content"> 
+                <div class="signup-form">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="register-form" id="register-form">
+                       <center> <h2>Donor registration form</h2></center><br>
+                        <div class="form-row">
+                            <div class="form-group <?php echo (!empty($first_name_err)) ? 'has-error' : ''; ?>">
+                                <label>First Name</label>
+                                <input type="text" name="first_name" class="form-control">
+                                <span class="help-block"><?php echo $first_name_err; ?></span>
+                            </div>
+                            <div class="form-group <?php echo (!empty($last_name_err)) ? 'has-error' : ''; ?>">
+                                <label>Last Name</label>
+                                <input type="text" name="last_name" class="form-control">
+                                <span class="help-block"><?php echo $last_name_err; ?></span>
+                            </div>
+                        </div>
+                        <div class="form-group <?php echo (!empty($nic_err)) ? 'has-error' : ''; ?>">
+                            <label>National Identification Number (NIC)</label>
+                            <input type="text" name="nic" class="form-control">
+                            <span class="help-block"><?php echo $nic_err; ?></span>
+                        </div>    
+                        <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control">
+                            <span class="help-block"><?php echo $password_err; ?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                            <label>Confirm Password</label>
+                            <input type="password" name="confirm_password" class="form-control">
+                            <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                        </div>
+                        
+                        <div class="form-group <?php echo (!empty($dob_err)) ? 'has-error' : ''; ?>">
+                            <label>Date of Birth</label>
+                            <input type="date" name="dob" class="form-control">
+                            <span class="help-block"><?php echo $dob_err; ?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($bgroup_err)) ? 'has-error' : ''; ?>">
+                            <label>Blood Group</label>
+                            <select id="bgroup" name="bgroup" class="form-control">
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                            </select>
+                            <span class="help-block"><?php echo $bgroup_err; ?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($gender_err)) ? 'has-error' : ''; ?>">
+                            <label>Gender</label>
+                            <select id="gender" name="gender" class="form-control">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                            <span class="help-block"><?php echo $gender_err; ?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($district_err)) ? 'has-error' : ''; ?>">
+                            <label>District</label>
+                            <select id="location" name="location" class="form-control">
+                                <option value=""></option>
+                                <option value="Ampara">Ampara</option>
+                                <option value="Anuradhapura">Anuradhapura</option>
+                                <option value="Badulla">Badulla</option>
+                                <option value="Batticaloa">Batticoloa</option>
+                                <option value="Colombo">Colombo</option>
+                                <option value="Galle">Galle</option>
+                                <option value="Gampaha">Gampaha</option>
+                                <option value="Hambantota">Hambantota</option>
+                                <option value="Jaffna">Jaffna</option>
+                                <option value="Kalutara">Kalutara</option>
+                                <option value="Kandy">Kandy</option>
+                                <option value="Kegalle">Kegalle</option>
+                                <option value="Kilinochchi">Kilinochchi</option>
+                                <option value="Kurunegala">Kurunegala</option>
+                                <option value="Mannar">Mannar</option>
+                                <option value="Matale">Matale</option>
+                                <option value="Matara">Matara</option>
+                                <option value="Monaragala">Monaragala</option>
+                                <option value="Mullativu">Mullativu</option>
+                                <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                <option value="Polonnaruwa">Polonnaruwa</option>
+                                <option value="Puttalam">Puttalam</option>
+                                <option value="Ratnapura">Ratnapura</option>
+                                <option value="Trincomalee">Trincomalee</option>
+                                <option value="Vavniya">Vavniya</option>
+                            </select>
+                            <span class="help-block"><?php echo $district_err; ?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($addline1_err)) ? 'has-error' : ''; ?>">
+                            <label>Address Line 1</label>
+                            <input type="text" name="addline1" class="form-control">
+                            <span class="help-block"><?php echo $addline1_err; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Address Line 2 (Optional)</label>
+                            <input type="text" name="addline2" class="form-control">
+                            
+                        </div>
+                        <div class="form-group <?php echo (!empty($telephone_err)) ? 'has-error' : ''; ?>">
+                            <label>Telephone</label>
+                            <input type="number" name="telephone-1" class="form-control">
+                            <span class="help-block"><?php echo $telephone_err; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Telephone(Optianal)</label>
+                            <input type="number" name="telephone-2" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                            <input type="reset" class="btn btn-default" value="Reset">
+                        </div>
+                        <p>Already have an account? <a href="../reg_login.php" style="color: #F78181;">Login here</a>.</p>
+                    </form>
+                </div>
             </div>
-            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label>Confirm Password</label>
-                <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
-                <span class="help-block"><?php echo $confirm_password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>First Name</label>
-                <input type="text" name="first_name" class="form-control" value="<?php echo $first_name; ?>">
-                <span class="help-block"><?php echo $first_name_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" name="last_name" class="form-control" value="<?php echo $last_name; ?>">
-                <span class="help-block"><?php echo $last_name_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>Date of Birth</label>
-                <input type="date" name="dob" class="form-control" value="<?php echo $dob; ?>">
-                <span class="help-block"><?php echo $dob_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>Blood Group</label>
-                <select id="bgroup" name="bgroup" class="form-control" value="<?php echo $bgroup; ?>">
-                    <option value="O+">O+</option>
-                    <option value="O-">O-</option>
-                    <option value="A+">A+</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="AB+">AB+</option>
-                    <option value="AB-">AB-</option>
-                </select>
-                <span class="help-block"><?php echo $bgroup_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>Gender</label>
-                <select id="gender" name="gender" class="form-control" value="<?php echo $gender; ?>">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-                <span class="help-block"><?php echo $gender_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>District</label>
-                <input type="text" name="district" class="form-control" value="<?php echo $district; ?>">
-                <span class="help-block"><?php echo $district_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>Address Line 1</label>
-                <input type="text" name="addline1" class="form-control" value="<?php echo $addline1; ?>">
-                <span class="help-block"><?php echo $addline1_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>Address Line 2 (Optional)</label>
-                <input type="text" name="addline2" class="form-control" value="<?php echo $addline2; ?>">
-                <span class="help-block"><?php echo $addline2_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>Telephone</label>
-                <input type="text" name="telephone" class="form-control" value="<?php echo $telephone; ?>">
-                <span class="help-block"><?php echo $telephone_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <input type="reset" class="btn btn-default" value="Reset">
-            </div>
-            <p>Already have an account? <a href="login.php">Login here</a>.</p>
-        </form>
-    </div>    
+        </div>
 </body>
 </html>
