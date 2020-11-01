@@ -1,2 +1,0 @@
-[23-Oct-2020 11:51:38 America/New_York] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/himajimn/public_html/bloodbank/donor/donations/hospital_donations.php on line 52
-[23-Oct-2020 11:51:38 America/New_York] PHP Notice:  Undefined variable: sum_volume in /home/himajimn/public_html/bloodbank/donor/donations/hospital_donations.php on line 65
