@@ -1,0 +1,157 @@
+[29-Oct-2020 06:56:48 America/New_York] PHP Parse error:  syntax error, unexpected 'use' (T_USE) in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 66
+[29-Oct-2020 07:01:29 America/New_York] PHP Parse error:  syntax error, unexpected 'use' (T_USE) in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 66
+[29-Oct-2020 07:04:51 America/New_York] PHP Notice:  Undefined index: email in /home/himajimn/public_html/bloodbank/reset/pending.php on line 13
+[29-Oct-2020 07:06:07 America/New_York] PHP Parse error:  syntax error, unexpected 'use' (T_USE) in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 67
+[29-Oct-2020 07:06:42 America/New_York] PHP Parse error:  syntax error, unexpected 'use' (T_USE) in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 67
+[29-Oct-2020 07:07:29 America/New_York] PHP Notice:  Undefined index: email in /home/himajimn/public_html/bloodbank/reset/pending.php on line 13
+[29-Oct-2020 07:15:40 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 07:15:40 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 07:17:17 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 07:17:17 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 07:24:47 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 07:24:47 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 07:46:11 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 07:46:11 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 07:46:12 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 07:46:12 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:21:16 America/New_York] PHP Warning:  require_once(config.php): failed to open stream: No such file or directory in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 14
+[29-Oct-2020 20:21:16 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 14
+[29-Oct-2020 20:21:17 America/New_York] PHP Warning:  require_once(config.php): failed to open stream: No such file or directory in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 14
+[29-Oct-2020 20:21:17 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 14
+[29-Oct-2020 20:25:51 America/New_York] PHP Warning:  require_once(config.php): failed to open stream: No such file or directory in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 14
+[29-Oct-2020 20:25:51 America/New_York] PHP Fatal error:  require_once(): Failed opening required 'config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 14
+[29-Oct-2020 20:33:29 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:33:29 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:35:52 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:35:52 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:35:59 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:35:59 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:39:36 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:39:36 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:39:43 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:39:43 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:41:40 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:41:40 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:41:45 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:41:45 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:43:41 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:43:41 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:43:47 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 20:43:47 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:46:09 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:46:09 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:46:14 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 73
+[29-Oct-2020 21:49:25 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:49:25 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:50:12 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:50:12 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:50:16 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 73
+[29-Oct-2020 21:50:38 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:50:38 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:50:42 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 74
+[29-Oct-2020 21:51:32 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:51:32 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:51:36 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 73
+[29-Oct-2020 21:52:14 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:52:14 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:52:18 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 73
+[29-Oct-2020 21:52:18 America/New_York] PHP Notice:  Array to string conversion in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 77
+[29-Oct-2020 21:52:35 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:52:35 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:52:40 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 73
+[29-Oct-2020 21:53:13 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:53:13 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:53:46 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 73
+[29-Oct-2020 21:53:52 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 73
+[29-Oct-2020 21:54:30 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:54:30 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:54:35 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 73
+[29-Oct-2020 21:54:35 America/New_York] PHP Recoverable fatal error:  Object of class mysqli_result could not be converted to string in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 82
+[29-Oct-2020 21:55:02 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:55:02 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:55:07 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 73
+[29-Oct-2020 21:55:46 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:55:46 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:55:51 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 73
+[29-Oct-2020 21:58:42 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:58:42 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 21:58:47 America/New_York] PHP Notice:  Undefined index: token in /home/himajimn/public_html/bloodbank/reset/app_logic.php on line 73
+[29-Oct-2020 22:03:15 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:03:15 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:03:54 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:03:54 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:06:12 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:06:12 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:07:35 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:07:35 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:10:41 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:10:41 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:12:51 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:12:51 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:14:39 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:14:39 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:29:02 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:29:02 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:37:39 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:37:39 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:53:38 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 22:53:38 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:33:31 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:33:31 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:35:16 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:35:16 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:35:48 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:35:48 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:36:31 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 5
+[29-Oct-2020 23:36:31 America/New_York] PHP Notice:  Undefined variable: SESSION in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 8
+[29-Oct-2020 23:37:24 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 5
+[29-Oct-2020 23:37:24 America/New_York] PHP Notice:  Undefined index: type in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 6
+[29-Oct-2020 23:37:24 America/New_York] PHP Notice:  Undefined variable: SESSION in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 8
+[29-Oct-2020 23:37:46 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 5
+[29-Oct-2020 23:41:48 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:41:48 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:41:55 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:41:55 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:45:19 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 5
+[29-Oct-2020 23:45:19 America/New_York] PHP Notice:  Undefined index: type in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 6
+[29-Oct-2020 23:46:17 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:46:17 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:51:46 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[29-Oct-2020 23:51:46 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 00:01:15 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 00:01:15 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 00:27:42 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 00:27:42 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 00:44:22 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 00:44:22 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 00:48:55 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 00:48:55 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 00:58:55 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 00:58:55 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 01:06:59 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 01:06:59 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 01:44:30 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 01:44:30 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 01:47:07 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 01:47:07 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 02:08:36 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 02:08:36 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 02:15:38 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 02:15:38 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 02:34:06 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 02:34:06 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 02:52:21 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 02:52:21 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 03:23:00 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 03:23:00 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 04:23:30 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 04:23:30 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 04:28:14 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 04:28:14 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 04:43:57 America/New_York] PHP Notice:  Undefined variable: errors in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 04:43:57 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/himajimn/public_html/bloodbank/reset/messages.php on line 1
+[30-Oct-2020 09:12:58 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 5
+[30-Oct-2020 09:12:58 America/New_York] PHP Notice:  Undefined index: type in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 6
+[30-Oct-2020 09:51:06 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 5
+[30-Oct-2020 09:51:07 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 5
+[30-Oct-2020 09:51:07 America/New_York] PHP Notice:  Undefined index: type in /home/himajimn/public_html/bloodbank/reset/enter_email.php on line 6
