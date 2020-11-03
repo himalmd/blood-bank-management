@@ -1,6 +1,6 @@
 <?php
-session_start();
 
+ 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["id-1"]) && isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   header("location: donor/index");
@@ -22,7 +22,7 @@ if(isset($_SESSION["id-3"]) && isset($_SESSION["loggedin"]) && $_SESSION["logged
   header("location: bank_admin/index");
   exit;
 }
-/* 
+ 
 // Include config file
 require_once "config.php";
  
@@ -150,16 +150,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     mysqli_close($link);
 }
-*/
-    $reg=$del=$out="";
-    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['key'])) {
+
+    if ($_SERVER["REQUEST_METHOD"] == "GET" && $_GET['key']=="ok") {
         $del= "Succesfully Deleted !!!";
     }
-    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['reg'])) {
+    if ($_SERVER["REQUEST_METHOD"] == "GET" && $_GET['reg']=="ok") {
         $reg= "Succesfully Created !!!";
-    }
-    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['logout'])) {
-        $out= "Log Out Succesfully !!!";
     }
 
 ?>
@@ -174,58 +170,170 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	
+	<style type="text/css">
+		/* Style the tab */
+		.tab {
+		  overflow: hidden;
+		  border: 1px solid #ccc;
+		  background-color: #f1f1f1;
+		}
+
+		/* Style the buttons inside the tab */
+		.tab button {
+		  background-color: inherit;
+		  float: left;
+		  border: none;
+		  outline: none;
+		  cursor: pointer;
+		  padding: 14px 23px;
+		  transition: 0.3s;
+		  font-size: 17px;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+		  background-color: #ddd;
+		}
+
+		/* Create an active/current tablink class */
+		.tab button.active {
+		  background-color: #ff8500;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+		  display: none;
+		  padding: 6px 16px;
+		}
+	</style>
 </head>
-<body>
+<body onload="openCity(event, 'Donors')">
 	<?php
 		require('header.php');
 	?>
-    <?php
-        echo '<p style="color:red; text-align:center;">'.$del.'</p>';
-        echo '<p style="color:red; text-align:center;">'.$out.'</p>';
-        echo '<p style="color:green; text-align:center;">'.$reg.'</p>';
-        ?>
+    
 	<div class="wrapper">
 		<div class="login">
-        		
-		<h2 class="center">Already have an account? LogIn!</h2>
-            <div class="tile-container">
-                    <a href="login/donor.php">
-                        <div class="tile">
-                            <p class="title">Blood Donors</p>
+		<div class="tab">
+		  <button class="tablinks active" onclick="openCity(event, 'Donors')" id = 'lol'>Donors</button>
+		  <button class="tablinks" onclick="openCity(event, 'Requesters')">Requesters</button>
+		  <button class="tablinks" onclick="openCity(event, 'Organization')">Organizations</button>
+		  <button class="tablinks" onclick="openCity(event, 'Hospitals')">Hospitals</button>
+		  <button class="tablinks" onclick="openCity(event, 'Admins')">Admins</button>
+		</div>
+        
+        <?php
+        echo '<p style="color:red; text-align:center;">'.$del.'</p>';
+        echo '<p style="color:green; text-align:center;">'.$reg.'</p>';
+        ?>
+
+		<div id="Donors" class="tabcontent">
+			<div class="form-style-2">
+				<div class="form-style-2-heading">Donor Login</div>
+				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        			<div class="form-group <?php echo (!empty($nic_err)) ? 'has-error' : ''; ?>">
+                        <label>NIC</label>
+                        <input type="text" name="nic" class="form-control">
+                        <span class="help-block "><?php echo $nic_err; ?></span>
+                    </div>
+        			<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control">
+                        <span class="help-block "><?php echo $password_err; ?></span>
+                    </div>
+
+					<label><input type="submit" name="donor" class="btn btn-primary" value="Login"></label>
+				</form>
+				<a href="reset/enter_email.php?type=donor">Forgot Password?</a>
+			</div>
+		</div>
+
+		<div id="Requesters" class="tabcontent">
+			<div class="form-style-2">
+				<div class="form-style-2-heading">Requester Login</div>
+				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            			<div class="form-group <?php echo (!empty($nic_err)) ? 'has-error' : ''; ?>">
+                            <label>NIC</label>
+                            <input type="text" name="nic" class="form-control">
+                            <span class="help-block "><?php echo $nic_err; ?></span>
                         </div>
-                    </a>
-                    <a href="login/requester.php">
-                    <div class="tile">
-                        <p class="title">Blood Requesters</p>
-                    </div>
-                    </a>
-                    <a href="login/hospital.php">
-                    <div class="tile">
-                        <p class="title">Normal Hospitals</p>
-                    </div>
-                    </a>
-                    <a href="login/organization.php">
-                    <div class="tile">
-                        <p class="title">Organizations</p>
-                    </div>
-                    </a>
-                    <a href="login/admin.php">
-                    <div class="tile">
-                        <p class="title">Admins</p>
-                    </div>
-                    </a>
-            </div>
+            			<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control">
+                            <span class="help-block "><?php echo $password_err; ?></span>
+                        </div>
 
-		
-		
+						<label><input type="submit" name="requester" class="btn btn-primary" value="Login"></label>
+				</form>
+				<a href="reset/enter_email.php">Forgot Password?</a>
+			</div>
+		</div>
 
-		
+		<div id="Organization" class="tabcontent">
+			<div class="form-style-2">
+				<div class="form-style-2-heading">Organization Login</div>
+				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            			<div class="form-group <?php echo (!empty($nic_err)) ? 'has-error' : ''; ?>">
+                            <label>Username</label>
+                            <input type="text" name="username" class="form-control" value="<?php echo $nic; ?>">
+                            <span class="help-block"><?php echo $nic_err; ?></span>
+                        </div>
+            			<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control">
+                            <span class="help-block"><?php echo $password_err; ?></span>
+                        </div>
+
+						<label><input type="submit" name="organization" class="btn btn-primary" value="Login"></label>
+				</form>
+				<a href="reset/enter_email.php">Forgot Password?</a>
+			</div>
+		</div>
+
+		<div id="Hospitals" class="tabcontent">
+			<div class="form-style-2">
+				<div class="form-style-2-heading">Hospital Login</div>
+				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            			<div class="form-group <?php echo (!empty($nic_err)) ? 'has-error' : ''; ?>">
+                            <label>Username</label>
+                            <input type="text" name="username" class="form-control" value="<?php echo $nic; ?>">
+                            <span class="help-block"><?php echo $nic_err; ?></span>
+                        </div>
+            			<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control">
+                            <span class="help-block"><?php echo $password_err; ?></span>
+                        </div>
+
+						<label><input type="submit" name="hospital" class="btn btn-primary" value="Login"></label>
+				</form>
+			</div>
+		</div>
+
+		<div id="Admins" class="tabcontent">
+			<div class="form-style-2">
+				<div class="form-style-2-heading">Admin Login</div>
+				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            			<div class="form-group <?php echo (!empty($nic_err)) ? 'has-error' : ''; ?>">
+                            <label>NIC</label>
+                            <input type="text" name="nic" class="form-control" value="<?php echo $nic; ?>">
+                            <span class="help-block"><?php echo $nic_err; ?></span>
+                        </div>
+            			<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control">
+                            <span class="help-block"><?php echo $password_err; ?></span>
+                        </div>
+
+						<label><input type="submit" name="admins" class="btn btn-primary" value="Login"></label>
+				</form>
+			</div>
+		</div>
 
 		</div>
 
 		<div class="register">
-		    <h2 class="center" style="padding-top: 10px;">New here? Sign Up!</h2>
+		    <h2 class="center">New here? Sign Up!</h2>
 		    <div class="tile-container">
                     <a href="donor/register.php">
                         <div class="tile">
@@ -237,9 +345,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <p class="title">Blood Requesters</p>
                     </div>
                     </a>
-                    <a href="hospital/signup.php">
+                    <a href="hospital/registration.php">
                     <div class="tile">
-                        <p class="title">Normal Hospitals</p>
+                        <p class="title">Hospitals</p>
                     </div>
                     </a>
                     <a href="organization/signup.php">
@@ -248,17 +356,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </div>
                     </a>
             </div>
-        </div>
+</div>
 	</div><!--wrapper-->
 
 
 	
 
 
+
+
 </body>
-<footer>
-    <?php
-        require_once "footer.php";
-    ?>
-</footer>
 </html>
