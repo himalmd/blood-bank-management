@@ -1,29 +1,14 @@
 <?php
-    $hos_err=$address_err=$district_err=$dr_err=$username_err=$mobile_err=$password_err=$confirm_password_err=$email_err="";
-    if($_SERVER['REQUEST_METHOD']=="GET")
-    {
-        if (isset($_GET['hos'])) {$hos_err=$_GET['hos'];}
-        if (isset($_GET['add'])) {$address_err=$_GET['add'];}
-        if (isset($_GET['dis'])) {$district_err=$_GET['dis'];}
-        if (isset($_GET['dr'])) {$dr_err=$_GET['dr'];}
-        if (isset($_GET['user'])) {$username_err=$_GET['user'];}
-        if (isset($_GET['mobi'])) {$mobile_err=$_GET['mobi'];}
-        if (isset($_GET['pass'])) {$password_err=$_GET['pass'];}
-        if (isset($_GET['compass'])) {$confirm_password_err=$_GET['compass'];}
-        if (isset($_GET['mail'])) {$email_err=$_GET['mail'];}
-
-    }
-?>
-<?php
     require 'header.php';
+
 ?>
 
 <body>
 	<div class="container">
             <div class="signup-content">
                 <div class="signup-form">
-                    <form action="application/signup.php" method="post" class="register-form" id="register-form">
-                       <center> <h2><a href="https://himal.dev/bloodbank/hospital/signup">Hospital registration form</a></h2></center><br>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="register-form" id="register-form">
+                       <center> <h2>Hospital registration form</h2></center><br>
                         
                         <div class="form-group <?php echo (!empty($hos_err)) ? 'has-error' : ''; ?>"> 
                             <label>Hospital Name</label>
@@ -76,12 +61,12 @@
                             <label>User Name</label>
                             <input type="text" name="username" class="form-control">
                             <span class="help-block"><?php echo $username_err; ?></span>
-                        </div>
+                        </div> 
                         <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                             <label>Email</label>
                             <input type="text" name="email" class="form-control">
                             <span class="help-block"><?php echo $email_err; ?></span>
-                        </div> 
+                        </div>
                         <div class="form-group <?php echo (!empty($mobile_err)) ? 'has-error' : ''; ?>">
                             <label>Telephone</label>
                             <input type="text" name="mobile" class="form-control">
