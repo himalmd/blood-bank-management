@@ -21,7 +21,7 @@ if (isset($_GET['logout'])) {
 	header("location: ../../reg_login?key=ok");
 }else{
 	// Redirect to login page
-	header("location: ../../reg_login");
+	header("location: ../../reg_login?logout=ok");
 }
 
 

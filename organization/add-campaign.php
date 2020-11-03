@@ -1,4 +1,6 @@
 <?php
+    require 'session.php';
+
     $name_err = $location_err = $estimate_err= $date_err = $time_err= $hosid_err="";
     if($_SERVER['REQUEST_METHOD']=="GET"){
         if (isset($_GET['hos'])) {$hosid_err=$_GET['hos'];}
@@ -16,6 +18,10 @@
 
 	require 'header.php';
     $today=date("Y-m-d");
+
+    // queries
+    $sql = "SELECT HospitalID, Name, District FROM blood_bank_hospital";
+    $result = mysqli_query($link, $sql);
 ?>
 <body >
 

@@ -22,10 +22,10 @@ session_destroy();
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['logout'])) {
 	
-	header("location: ../../reg_login?key=ok");
+	header("location: ../reg_login?key=ok");
 
 }else{
-	header("location: ../../reg_login?logout=ok");
+	header("location: ../reg_login");
 }
 exit;
 

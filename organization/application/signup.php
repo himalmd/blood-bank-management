@@ -1,6 +1,7 @@
 <?php
 
-     require_once "../session.php";
+    // require_once "../session.php";
+        require_once "../../config.php";
     //define variables 
     $org_name=$district=$president=$user_name=$mobile=$password=$confirm_password=$purpose=$email="";
     $org_err=$district_err=$president_err=$username_err=$mobile_err=$password_err=$confirm_password_err=$email_err="";
@@ -145,7 +146,7 @@
                     }else{echo "Telephone1 errors";}
                     
                     // Redirect to login page
-                    header("location: ../../reg_login.php?reg=ok");
+                    header("location: ../../test_login.php?reg=ok");
                 }
                 else{
                     echo "Something went wrong, please try again later";
