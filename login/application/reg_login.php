@@ -1,30 +1,26 @@
 <?php
-session_start();
-
-// Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["id-1"]) && isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("location: donor/index");
+  header("Location: ../../donor/index");
   exit;
 }
 if(isset($_SESSION["id-2"]) && isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("location: requester/index.php");
+  header("Location: ../../requester/index.php");
   exit;
 }
 if(isset($_SESSION["id-4"]) && isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("location: organization/index");
+  header("Location: ../../organization/index");
   exit;
 }
 if(isset($_SESSION["id-5"]) && isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("location: hospital/index");
+  header("Location: ../../hospital/index");
   exit;
 }
 if(isset($_SESSION["id-3"]) && isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("location: bank_admin/index");
+  header("Location: ../../bank_admin/index");
   exit;
 }
-/* 
 // Include config file
-require_once "config.php";
+require_once "../../config.php";
  
 // Define variables and initialize with empty values
 $nic = $password = $name= "";
@@ -34,7 +30,7 @@ $nic_err = $password_err = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    if($_POST['donor'] || $_POST['requester'] || $_POST['admins']){
+    if(isset($_POST['donor']) || isset($_POST['requester']) || isset($_POST['admins'])){
 
     // Check if NIC is empty
         if(empty(trim($_POST["nic"]))){
@@ -45,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
     }else{
-    //Check if username is empty"
+    // Check if username is empty
         if(empty(trim($_POST["username"]))){
             $nic_err = "Please enter username.";
         }else{
@@ -65,21 +61,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($nic_err) && empty($password_err)){
 
         // Prepare a select statement
-        if($_POST['donor']) {
+        if(isset($_POST['donor'])) {
             $sql = "SELECT nic, first_name, password FROM donor WHERE nic = ?";
-        }elseif ($_POST['requester']) {
+        }elseif (isset($_POST['requester'])) {
             $sql = "SELECT NIC, FirstName, Password FROM requestor WHERE NIC = ?";
-        }elseif($_POST['admins']){
+        }elseif(isset($_POST['admins'])){
             $sql = "SELECT BloodBankID, FirstName, Password FROM blood_bank_admin WHERE NIC = ?";
-        }elseif($_POST['organization']) {
+        }elseif(isset($_POST['organization'])) {
             $sql = "SELECT UserName, OrganizationName, Password FROM organization WHERE UserName = ?";
-        }elseif($_POST['hospital']){
+        }elseif(isset($_POST['hospital'])){
             $sql = "SELECT UserName, Name, Password FROM normal_hospital WHERE UserName = ?";
         }else{
             #
         }
        
-        
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
@@ -95,6 +90,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
+
                     mysqli_stmt_bind_result($stmt, $id, $nic, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){
                         
@@ -107,26 +103,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["nic"] = $nic;                           
                             
                             // Redirect user to welcome page
-                            if($_POST['donor']){
+                            if(isset($_POST['donor'])){
                                 $_SESSION["id-1"] = $id;
                                 $_SESSION["id_card"] = $id_card;
-                                header("location: donor/index");
-                            }elseif ($_POST['requester']) {
+                                header("location: ../../donor/index");
+                            }elseif (isset($_POST['requester'])) {
                                 $_SESSION["id-2"] = $id;
                                 $_SESSION["id_card2"] = $id_card;
-                                header("location: requester/index.php");
-                            }elseif ($_POST['admins']) {
+                                header("location: ../../requester/index");
+                            }elseif (isset($_POST['admins'])) {
                                 $_SESSION["id-3"] = $id;
                                 $_SESSION["id_card3"] = $id_card;
-                                header("location: bank_admin/index");
-                            }elseif ($_POST['organization']) {
+                                header("location: ../../bank_admin/index");
+                            }elseif (isset($_POST['organization'])) {
                                 $_SESSION["id-4"] = $id;
-                                header("location: organization/index");
-                            }elseif ($_POST['hospital']) {
+                                header("location: ../../organization/index");
+                            }elseif (isset($_POST['hospital'])) {
                                 $_SESSION["id-5"] = $id; 
-                                header("location: hospital/index");
+                                header("Location: ../../hospital/index");
                             }else{
-                                #
+                                echo "HOOOO";
                             }
                             
                         } else{
@@ -146,119 +142,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             mysqli_stmt_close($stmt);
         }
     }
+    	
+        if (!empty($nic_err) || !empty($password_err)) {
+            if (isset($_POST['donor'])) {
+            header("Location: ../donor.php?donor=ok&nic=$nic_err&pass=$password_err");
+            }elseif (isset($_POST['requester'])) {
+            header("Location: ../requester.php?requester=ok&nic=$nic_err&pass=$password_err");
+            }elseif (isset($_POST['admins'])) {
+            header("Location: ../admin.php?admin=ok&nic=$nic_err&pass=$password_err");
+            }elseif (isset($_POST['hospital'])) {
+            header("Location: ../hospital.php?hospital=ok&nic=$nic_err&pass=$password_err");
+            }else{
+            header("Location: ../organization.php?organization=ok&nic=$nic_err&pass=$password_err");
+            }
+        }
+
+    
     
     // Close connection
     mysqli_close($link);
 }
-*/
-    $reg=$del=$out="";
-    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['key'])) {
-        $del= "Succesfully Deleted !!!";
-    }
-    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['reg'])) {
-        $reg= "Succesfully Created !!!";
-    }
-    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['logout'])) {
-        $out= "Log Out Succesfully !!!";
-    }
 
 ?>
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Registration/Login</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	
-</head>
-<body>
-	<?php
-		require('header.php');
-	?>
-    <?php
-        echo '<p style="color:red; text-align:center;">'.$del.'</p>';
-        echo '<p style="color:red; text-align:center;">'.$out.'</p>';
-        echo '<p style="color:green; text-align:center;">'.$reg.'</p>';
-        ?>
-	<div class="wrapper">
-		<div class="login">
-        		
-		<h2 class="center">Already have an account? LogIn!</h2>
-            <div class="tile-container">
-                    <a href="login/donor.php">
-                        <div class="tile">
-                            <p class="title">Blood Donors</p>
-                        </div>
-                    </a>
-                    <a href="login/requester.php">
-                    <div class="tile">
-                        <p class="title">Blood Requesters</p>
-                    </div>
-                    </a>
-                    <a href="login/hospital.php">
-                    <div class="tile">
-                        <p class="title">Normal Hospitals</p>
-                    </div>
-                    </a>
-                    <a href="login/organization.php">
-                    <div class="tile">
-                        <p class="title">Organizations</p>
-                    </div>
-                    </a>
-                    <a href="login/admin.php">
-                    <div class="tile">
-                        <p class="title">Admins</p>
-                    </div>
-                    </a>
-            </div>
-
-		
-		
-
-		
-
-		</div>
-
-		<div class="register">
-		    <h2 class="center" style="padding-top: 10px;">New here? Sign Up!</h2>
-		    <div class="tile-container">
-                    <a href="donor/register.php">
-                        <div class="tile">
-                            <p class="title">Blood Donors</p>
-                        </div>
-                    </a>
-                    <a href="requester/signup.php">
-                    <div class="tile">
-                        <p class="title">Blood Requesters</p>
-                    </div>
-                    </a>
-                    <a href="hospital/signup.php">
-                    <div class="tile">
-                        <p class="title">Normal Hospitals</p>
-                    </div>
-                    </a>
-                    <a href="organization/signup.php">
-                    <div class="tile">
-                        <p class="title">Organizations</p>
-                    </div>
-                    </a>
-            </div>
-        </div>
-	</div><!--wrapper-->
-
-
-	
-
-
-</body>
-<footer>
-    <?php
-        require_once "footer.php";
-    ?>
-</footer>
-</html>

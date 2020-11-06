@@ -2,7 +2,7 @@
 	session_start();
 
 	// Include config file
-	require_once "../config.php";
+	require_once "config.php";
  
 	// Define variables and initialize with empty values
 	$password = $nic= "";
@@ -115,6 +115,7 @@
                     <a href="reset/enter_email.php?type=super-admin">Forgot Password?</a>
 			</div>
 		</div>
+        <a href="../reg_login">Cancel</a>
 	</center>
 
 </body>
